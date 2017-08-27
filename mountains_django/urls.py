@@ -13,9 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from munros.resources import MountainResource
+
+mountain_resource = MountainResource()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(mountain_resource.urls)),
+    url(r'^munros/', include('munros.urls')),
+    #Add Django site authentication urls (for login, logout, password management)
+    url(r'^accounts/', include('django.contrib.auth.urls')),
 ]

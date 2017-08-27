@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- poss additional meta tags to go here -->
+  <title>Munros | {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'munros/styles.css' %}" />
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+<script type="text/jsx" src="{% static 'munros/indexReact.jsx'%}"></script>
+  
+</body>
+</html>
