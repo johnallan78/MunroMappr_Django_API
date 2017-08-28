@@ -9,7 +9,7 @@ class Mountain(models.Model):
   height= models.CharField(max_length=20)
   lat= models.DecimalField(max_digits=9, decimal_places=6)
   lon= models.DecimalField(max_digits=9, decimal_places=6)
-  # image = models.CharField(max_length= 255, null= True, blank= True),
+  image = models.CharField(max_length= 255, null= True, blank= True),
   created_at= models.DateTimeField(auto_now_add=True)
 
   def __str__(self):
